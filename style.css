@@ -52,3 +52,32 @@ body {
     margin-left: 40px;
     align-items: center;
 }
+.video {
+    display: block;
+    width: 50%;
+    margin: 40px auto;
+    max-width: 80%;
+    border-radius: 10px;
+    height: 400px;
+    border-color: rgb(26, 23, 23);
+}
+.audio {
+    display: block;
+    width: 50%;
+    margin: 20px auto;
+    border-color:rgb(26, 23, 23); ;
+}
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #f1f1f1;
+    margin-top: 40px;
+    
+}
+.iframe{
+    display: block;
+    width: 80%;
+    height: 500px;
+    margin: 40px auto;
+    border-radius: 10px;
+}
