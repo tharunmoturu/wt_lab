@@ -1,9 +1,9 @@
 <?php
 $host = "127.0.0.1";
 $user = "root";
-$pass = "";        // keep empty for now
+$pass = "";       
 $dbname = "freelancehub";
-$port = 3307;      // IMPORTANT
+$port = 3307;    
 
 $conn = mysqli_connect($host, $user, $pass, $dbname, $port);
 

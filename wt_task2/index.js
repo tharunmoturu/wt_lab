@@ -3,8 +3,10 @@ let autoSlideInterval;
 const slidesWrapper = document.querySelector(".slides-container");
 const slides = document.getElementsByClassName("mySlides");
 const dots = document.getElementsByClassName("dot");
-showSlides(slideIndex);
-startAutoSlide();
+if (slidesWrapper) {
+  showSlides(slideIndex);
+  startAutoSlide();
+}
 const plusSlides = (n)=> {
   slideIndex += n;
   showSlides(slideIndex);
