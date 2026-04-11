@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Complete jQuery Lab</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+        body { font-family: Arial; padding: 20px; }
+        section { margin-bottom: 40px; }
+        .box { width:100px; height:100px; background:blue; position:relative; margin:10px; }
+        .highlight { background:yellow; }
+        .red { color:red; }
+        ul li { margin:5px; }
+    </style>
+</head>
+
+<body>
+
+<h1>Complete jQuery Lab Implementation</h1>
+
+<!-- SELECTORS -->
+<section>
+<h2>1. Selectors</h2>
+<p id="idSel">ID Selector</p>
+<p class="classSel">Class Selector</p>
+<p class="classSel">Another Class</p>
+<ul id="list">
+    <li>Item1</li>
+    <li>Item2</li>
+    <li>Item3</li>
+</ul>
+<button id="btnSelectors">Test Selectors</button>
+</section>
+
+<!-- ATTRIBUTES -->
+<section>
+<h2>2. Attributes</h2>
+<img id="img" src="https://via.placeholder.com/100">
+<br><br>
+<input type="text" id="inputVal" placeholder="Enter value">
+<input type="checkbox" id="check">
+<button id="btnAttr">Test Attributes</button>
+</section>
+
+<!-- EVENTS -->
+<section>
+<h2>3. Events</h2>
+<button id="btnClick">Click</button>
+<button id="btnDbl">Double Click</button>
+<input type="text" id="keyInput" placeholder="Type here">
+<form id="form">
+    <input type="text" id="name" placeholder="Name">
+    <button type="submit">Submit</button>
+</form>
+</section>
+
+<!-- STYLE -->
+<section>
+<h2>4. Style</h2>
+<p id="styleText">Style me</p>
+<button id="btnStyle">Apply Style</button>
+</section>
+
+<!-- TRAVERSING -->
+<section>
+<h2>5. Traversing</h2>
+<div id="parent">
+    <p class="child">Child1</p>
+    <p class="child special">Child2</p>
+    <p class="child">Child3</p>
+</div>
+<button id="btnTraverse">Traverse</button>
+</section>
+
+<!-- EFFECTS -->
+<section>
+<h2>6. Effects</h2>
+<div class="box"></div>
+<button id="hide">Hide</button>
+<button id="show">Show</button>
+<button id="toggle">Toggle</button>
+<button id="fade">Fade</button>
+<button id="slide">Slide</button>
+</section>
+
+<!-- ANIMATION -->
+<section>
+<h2>7. Animation + Control</h2>
+<button id="animate">Animate</button>
+<button id="stop">Stop</button>
+<button id="queue">Queue</button>
+</section>
+
+<script src="scriptjquery.js"></script>
+</body>
+</html>
