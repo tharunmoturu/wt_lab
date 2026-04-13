@@ -1,13 +1,17 @@
 <?php
-$host = "127.0.0.1";
-$user = "root";
-$pass = "";       
-$dbname = "freelancehub";
-$port = 3307;    
+require_once __DIR__ . '/vendor/autoload.php';
 
-$conn = mysqli_connect($host, $user, $pass, $dbname, $port);
+// Parse .env file
+$env = parse_ini_file(__DIR__ . '/.env');
+$mongoUri = $env['MONGODB_URI'] ?? "mongodb://localhost:27017";
 
-if (!$conn) {
-    die("Database connection failed: " . mysqli_connect_error());
+try {
+    // Connect to MongoDB using the URI from .env
+    $client = new MongoDB\Client($mongoUri);
+    
+    $db = $client->freelancehub;
+    
+} catch (Exception $e) {
+    die("Database connection failed: " . $e->getMessage());
 }
 ?>

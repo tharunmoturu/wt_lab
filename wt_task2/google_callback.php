@@ -22,12 +22,28 @@ if (isset($_GET['code'])) {
         $email = $google_account_info->email;
         $name = $google_account_info->name;
 
+        include 'db.php';
         session_start();
         $_SESSION['user_email'] = $email;
         $_SESSION['user_name'] = $name;
 
-        echo "Welcome, " . htmlspecialchars($name) . " (" . htmlspecialchars($email) . ")";
-        echo "<br><a href='index.html'>Go back to Home</a>";
+        // Store or update user in MongoDB
+        $usersCollection = $db->users;
+        $existingUser = $usersCollection->findOne(['email' => $email]);
+
+        if (!$existingUser) {
+            // New user from Google
+            $usersCollection->insertOne([
+                'fullname' => $name,
+                'email' => $email,
+                'auth_method' => 'google',
+                'created_at' => new MongoDB\BSON\UTCDateTime()
+            ]);
+        }
+
+        echo "<h2>Login Successful!</h2>";
+        echo "Welcome, <strong>" . htmlspecialchars($name) . "</strong> (" . htmlspecialchars($email) . ")";
+        echo "<br><br><a href='index.html' style='padding: 10px 20px; background: #007bff; color: white; text-decoration: none; border-radius: 5px;'>Go back to Home</a>";
         exit;
     } else {
         echo "Error in authentication: " . htmlspecialchars($token['error']);
